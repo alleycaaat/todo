@@ -8,12 +8,11 @@ const client = new Fauna.Client({
 
 exports.handler = async (req, res) => {
     return client
-        .query(q.Paginate(q.Match(q.Ref('Notes/all_notes'))))
-        .then((response) => {
-            const todos = response.data;
-            const getAllData = todos.map((ref) => {
-                console.log(getAllData,' GET ALL DATA HERE');
-                return q.Get(ref);
+        .query(q.Paginate(q.Match(q.Collection('Notes'))))
+            .then((response)=>{
+           const todos = response.data;
+            const getAllData = todos.map((response) => {
+                return q.Get(response);
             });
 
             return client.query(getAllData).then((response) => {

@@ -7,9 +7,9 @@ const listtasks = () => {
     });
 };
 
-const create = (data) => {
+const create = (task) => {
     return fetch('/.netlify/functions/createTask', {
-        body: JSON.stringify(data),
+        body: JSON.stringify(task),
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
     }).then((response) => {
@@ -36,9 +36,5 @@ const erase = (todoId) => {
     });
 };
 
-export default {
-    create: create,
-    listtasks: listtasks,
-    update: update,
-    erase: erase,
-};
+const apis = {create,listtasks,update,erase}
+export default apis

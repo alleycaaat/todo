@@ -14,7 +14,8 @@ exports.handler = async (req, res) => {
     }
 
     return client
-        .query(q.Create(q.Collection('notes'),task))
+        .query(q.Create(q.Ref('notes/'),task))
+        
         .then((response) => {
             console.log('success', response);
             return {
@@ -30,4 +31,4 @@ exports.handler = async (req, res) => {
                 body: JSON.stringify(error),
             };
         });
-};
+}; 

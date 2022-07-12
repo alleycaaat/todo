@@ -12,7 +12,7 @@ Content-Type:  application/json
 }
 
 ###
-get http://localhost:8888/.netlify/functions/listtasks
+post http://localhost:8888/.netlify/functions/listtasks
 
 ####
 delete http://localhost:8888/.netlify/functions/erasetask
