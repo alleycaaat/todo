@@ -1,0 +1,18 @@
+get http://localhost:8888/.netlify/functions/hello
+
+###
+get http://localhost:8888/.netlify/functions/listtasks
+
+###
+post http://localhost:8888/.netlify/functions/createTask
+Content-Type:  application/json
+
+{
+    "data": "new task"
+}
+
+###
+get http://localhost:8888/.netlify/functions/listtasks
+
+####
+delete http://localhost:8888/.netlify/functions/erasetask
