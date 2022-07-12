@@ -15,4 +15,4 @@ Content-Type:  application/json
 post http://localhost:8888/.netlify/functions/listtasks
 
 ####
-delete http://localhost:8888/.netlify/functions/erasetask
+delete http://localhost:8888/.netlify/functions/erase
